@@ -1,137 +1,151 @@
 import React from 'react'
 import './Sobre.css'
 import { Grid, Box, Typography, Button } from '@material-ui/core'
+import Cards from '../../components/cards/Cards'
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+
 
 function Sobre() {
+
+let history = useNavigate();
+
+function contatoEnviar(){
+
+    toast.success('Mensagem Enviada!', {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+        theme: "colored",
+
+      });
+    history('/home')
+}
 
     return (
 
         <>
-            {/* GRID PRINCIPAL COM TODO O CONTEÚDO */}
-            <Grid container className='principal'>
+            <main className="pagina-sobre" id='gh-sobre'>
 
-                <Grid container className='centralizar' item xs={12}>
-                    <h1>
-                        LOGO CENTRALIZADO NO SITE GRAPHOME
-                    </h1>
+                <section className="sobre-introducao">
 
+                    <div className='sobre-introducao-cabecalho'>
 
-                </Grid>
+                        <div className='sobre-introducao-cabecalho-textos'>
 
-                {/* GRID TEXTO ESQUERDA DO SITE DIVIDINDO COM GRID DE IMG */}
-                <Grid item xs={6}>
-
-                    <div>
-
-                        <div>
-                            <h2>Quem somos?</h2>
-                        </div>
-
-                        <div>
-                            <h3>Uma rede social, alinhada com os objetivos de desenvolvimento sustentável da Onu, para compartilhar projetos de arquitetura colaborativo entre comunidade e profissionais, voltado para a reforma da paisagem urbana através de intervenção artística e gráfica com o objetivo de construir assentamentos urbanos mais agradáveis e seguros.
-
-                                O intuito é fornecer um espaço voltado para organizar, construir e executar ideias e, por fim, incentivar e inspirar pessoas com os resultados apresentados.
-                            </h3>
-                        </div>
-
-                    </div>
-
-
-
-
-                </Grid>
-
-                {/* GRID IMG FAZER UM CARROSEL, COM ALGUNS EXEMPLOS DE IMAGENS, DIREITA */}
-                <Grid item xs={6}>
-
-                    <div>
-
-                        <h2 className='centralizar'>Carrossel com imagens</h2>
-
-                    </div>
-
-
-                </Grid>
-
-                {/* GRID PARA CONTEÚDOS SECUNDÁRIOS */}
-                <Grid container className='div2principal' item xs={12}>
-
-                    <div className='div2textos'>
-                        <h2>TEXTOS SECUNDÁRIOS:</h2>
-                    </div>
-
-
-                    <div className='div2textos'>
-
-
-                        <div>
-                            <img src='https://sme.goiania.go.gov.br/conexaoescola/wp-content/uploads/2020/10/GRAFITTI-1-Imagem-de-NakNakNak-por-Pixabay-e1601907148178.jpg' alt='' width='250px' />
-                        </div>
-
-                        <div>
-                            <h5>O problema social a ser trabalhado. </h5>
-                            <h6> Prevenir danos causados por desastres em infraestruturas críticas, assentamentos precários, assentamentos informais ou domicílios inadequados garantindo à habitação segura e moradia digna e segura.</h6>
-                        </div>
-
-                        <div>
-                            <h5> Impacto dele na sociedade. </h5>
-                            <h6> As transformações devem ter origem na própria comunidade que utiliza o espaço para evitar processos de gentrificação, como também diminuir riscos de desabamentos.
-
-                                Trazer e viabilizar projetos de qualidade a fim de promover melhoria da paisagem urbana, gerando bem estar social e engajamento com a comunidade. Outros benefícios incluem diminuição da violência, fomentação da vida urbana e senso de comunidade e segurança.
+                            <h6 className='sobre-introducao-cabecalho-texto1'>
+                                faça a diferença.
                             </h6>
+
+                            <h2 className='sobre-introducao-cabecalho-texto2'>
+                                <p>UMA PLATAFORMA</p>
+                                <p>PARA TRANSFORMAR.</p>
+                            </h2>
+
                         </div>
 
-
                     </div>
 
+                    <div className="introducao-textos-secundarios">
 
-                </Grid>
+                        <p className="introducao-textos-secundarios-p">
+                            Uma rede social, criada alinhada com os objetivos de desenvolvimento sustentável da ONU, para
+                            compartilhar projetos de arquitetura colaborativo entre comunidade e profissionais, voltado para a
+                            reforma da paisagem urbana através de intervenção artística e gráfica com o objetivo de construir
+                            assentamentos urbanos mais agradáveis e seguros.
+                        </p>
 
-                {/* GRID PARA CARD DA EQUIPE */}
-                <Grid container className='teste3' item xs={12}>
-
-                    <div className='teste2'>
-                        <h2>CARDS DA EQUIPE DE DEVS</h2>
+                        <p className="introducao-textos-secundarios-p">
+                            O intuito é fornecer um espaço onde os usuários possam organizar, construir e executar ideias e, por fim,
+                            incentivar e inspirar pessoas com os resultados apresentados.
+                        </p>
                     </div>
+                </section>
+
+                <section className='sobre-devs' id='sobre-devs'>
+                    <h2 className='sobre-devs-titulo'>CONHEÇA OS DEVS</h2>
+                    <Cards />
 
 
-                    <div className='teste'>
+                </section>
+
+                <section className='sobre-contato' id='sobre-contato'>
+
+                    <section className='sobre-contato-bloco'>
+
+                        <div className='sobre-contato-conversar'>
+                            <h2 className='sobre-contato-titulo'>VAMOS CONVERSAR.</h2>
+                            <p>Deixe-nos saber quem você é e quais são seus pensamentos sobre nossa rede.</p>
+                            <p>Para entrar em contato com os criadores,  </p>
+                            <a href='#sobre-devs'>Confira nossos cards</a>
+                        </div>
+
+                        <img className='gif-contato' src='https://i.pinimg.com/originals/d0/d7/f6/d0d7f6c5ff1e0850fad3a19c441931ab.gif' />
+
+                    </section>
+
+                    <section className='sobre-contato-bloco'>
+
+                        <div className='sobre-contato-quem'>
+                            <h2 className='sobre-contato-titulo'>QUEM É VOCÊ?</h2>
+                            <p>Quanto mais detalhes você incluir, mais fácil ficará para nós respondermos a sua mensagem</p>
+                        </div>
+
+                        <div className='bloco2-inputs'>
+
+                            <div className='bloco2-inputs-coluna'>
+                                <label className='bloco2-labels'>
+                                    <span>Meu nome é:</span>
+                                    <input type='text' name='nome' className='sobre-input-linha' />
+                                </label>
+
+                                <label className='bloco2-labels'>
+                                    <span>Meu e-mail é:</span>
+                                    <input type='email' name='email' className='sobre-input-linha' />
+                                </label>
+                            </div>
 
 
+                            <div>
+                                <label className='bloco2-labels'>
+                                    <span>O que eu faço:</span>
+                                    <input type='text' name='ocupacao' className='sobre-input-linha' />
+                                </label>
 
-                        <div> CARD 1</div>
-                        <div> CARD 2</div>
-                        <div> CARD 3</div>
-                        <div> CARD 4</div>
-                        <div> CARD 5</div>
-                        <div> CARD 6</div>
+                                <label className='bloco2-labels'>
+                                    <span>Meu interesse é:</span>
+                                    <input type='text' name='assunto' className='sobre-input-linha' />
+                                </label>
+                            </div>
 
-                    </div>
+                        </div>
+                    </section>
 
+                    <section className='sobre-contato-bloco'>
 
-                </Grid>
+                        <div className='sobre-contato-pensamentos'>
+                            <h2 className='sobre-contato-titulo'>QUAIS SEUS PENSAMENTOS?</h2>
+                        </div>
 
-                {/* DIV PARA ENTRAR EM CONTATO */}
+                        <label className='bloco3-labels'>
+                            <span>Digite a sua mensagem</span>
+                            <textarea name='mensagem' className='sobre-input-texto' />
+                        </label>
 
-                <Grid container className='contato' item xs={12}>
+                    </section>
 
-                    <Grid item xs={6}>
+                    <section className='sobre-contato-bloco4'>
+                        <a href='#gh-sobre'>voltar para o começo da página</a>
+                        <Button variant="outlined" className="botao-contato" onClick={contatoEnviar}> ENVIAR </Button>
+                    </section>
 
-                        <h2>CONTATO</h2>
+                </section>
 
-                    </Grid>
-
-                    <Grid item xs={6}>
-
-                        <h2>INPUT</h2>
-
-                    </Grid>
-
-
-                </Grid>
-
-
-            </Grid>
+            </main >
         </>
     )
 }
